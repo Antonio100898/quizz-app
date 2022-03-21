@@ -1,0 +1,59 @@
+.app {
+    width: 1000px;
+    height: 800px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to right bottom, rgb(0, 0, 95), rgb(240, 240, 240));
+}
+.header{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.question_block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: calc(100% - 20px);
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+}
+.topic {
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.button {
+    height: 50px;
+    width: 100px;
+    font-size: 15px;
+    padding: 5px;
+}
+.completed_count {
+    font-size: 20px;
+    font-weight: bold;
+}
+.completed_alert {
+    font-size: 40px;
+    color: rgb(42, 42, 146);
+    font-weight: bold;
+}
+.new_quizz_button {
+    
+}
+.start_quizz_button{
+    
+}
+.filter_form {
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
