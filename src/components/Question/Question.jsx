@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./Main.module.css";
 
 const Question = ({
@@ -41,7 +41,6 @@ const Question = ({
 
   const correctAnswerHandler = (e) => {
     setSelectedAnswer(e.target.value);
-    //setDisabled(true);
     setDisabledNextButton(false);
     if (e.target.value === correct_answer) {
       setCorrect(true);
@@ -52,7 +51,7 @@ const Question = ({
 
   return (
     <div className={styles.question_block_wrapper}>
-      <div className={styles.question}>{question}</div>
+      <div className={styles.question}>{question && atob(question)}</div>
       <div className={styles.answers}>
         {joinedAnswers &&
           joinedAnswers.map((a) => (
@@ -62,7 +61,7 @@ const Question = ({
                 onClick={correctAnswerHandler}
                 value={a}
               >
-                {a}
+                { a && atob(a)}
               </button>
             </div>
           ))}

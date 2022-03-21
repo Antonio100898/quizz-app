@@ -11,11 +11,11 @@ const FilterForm = ({setUrl, setAmount}) => {
             }  else if (e.difficulty) {
                 instance = instance + "&difficulty=" + e.difficulty
             }
+            instance = instance + "&encode=base64";
             return instance; 
         } 
         setUrl(createUrl());
         setAmount(e.amount);
-        
   };
   return (
     <div>
