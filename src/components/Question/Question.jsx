@@ -57,11 +57,15 @@ const Question = ({
           joinedAnswers.map((a) => (
             <div key={a}>
               <button
-                className={selectedAnswer === a ?styles.answer + " " + styles.selected : styles.answer}
+                className={
+                  selectedAnswer === a
+                    ? styles.answer + " " + styles.selected
+                    : styles.answer
+                }
                 onClick={correctAnswerHandler}
                 value={a}
               >
-                { a && atob(a)}
+                {a && atob(a)}
               </button>
             </div>
           ))}

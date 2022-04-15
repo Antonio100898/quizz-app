@@ -16,7 +16,7 @@ function App() {
   const [url, setUrl] = useState("");
   const [amount, setAmount] = useState(0);
   const [started, setStarted] = useState(false);
-  
+
   useEffect(async () => {
     if (localStorage.getItem("token") === null) {
       let response = await axios.get(
@@ -56,7 +56,7 @@ function App() {
       <div className={styles.header}>
         <div className={styles.topic}>Quizz App by Anton Mishanin</div>
         <button
-          disabled={(!url || amount == 0 || amount == undefined ) && true}
+          disabled={(!url || amount == 0 || amount == undefined) && true}
           className={styles.button + " " + styles.new_quizz_button}
           onClick={getQuestions}
         >
@@ -86,14 +86,19 @@ function App() {
             {...questions[currentQuestion]}
           />
         )}
-         <div className={styles.completed_alert}>
-        {finish && (
-          <div>You got {correctAnswersCount} correct answers, well done!</div>
-        )}
+        <div className={styles.completed_alert}>
+          {finish && (
+            <div>You got {correctAnswersCount} correct answers, well done!</div>
+          )}
+        </div>
       </div>
-      </div>
-      {!finish && (amount > 0 && started) && (<div className={styles.completed_count}>{currentQuestion + 1} / {amount} </div>)}
+      {!finish && amount > 0 && started && (
+        <div className={styles.completed_count}>
+          {currentQuestion + 1} / {amount}{" "}
+        </div>
+      )}
     </div>
   );
 }
+
 export default App;
